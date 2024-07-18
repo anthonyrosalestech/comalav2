@@ -4,14 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TipoProceso extends Model
+class UsoSuelo extends Model
 {
-    protected $table = 'tipo_procesos';
+    protected $table = 'uso_suelo';
     protected $primaryKey = 'id';
 
     protected $fillable = [
       'id',
-      'nombre',
-      'descripcion',
+      'zona',
+      'nomenclatura',
+      'uso_suelo',
+      'cos',
+      'cus',
     ];
 }

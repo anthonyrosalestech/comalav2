@@ -1,0 +1,41 @@
+1,Aprovechamiento de recursos naturales,AE,Actividades Extractivas,0.1,0.2
+2,Aprovechamiento de recursos naturales,AG,Agropecuaria,0.1,0.2
+3,Aprovechamiento de recursos naturales,GH,Grama y Huertos,0.1,0.2
+4,Turistico,TH-1,Hotelera densidad minima,0.15,0.3
+5,Turistico,TH-2,Hotelera densidad baja,0.2,0.6
+6,Turistico,TH-3,Hotelera densidad media,0.25,1
+7,Turistico,TH-4,Hotelera densidad alta,0.3,1.2
+8,Habitacional,H-1,Densidad baja Campestre,0.4,0.8
+9,Habitacional,H2-U,Densidad baja Unifamiliar,0.6,1.2
+10,Habitacional,H2-H,Densidad baja Plurifamiliar Horizontal,0.6,1.2
+11,Habitacional,H2-V,Densidad baja Plurifamiliar Vertical,0.6,1.2
+12,Habitacional,H3-U,Densidad media Unifamiliar,0.7,1.4
+13,Habitacional,H3-H,Densidad media Plurifamiliar Horizontal,0.7,1.4
+14,Habitacional,H3-V,Densidad media Plurifamiliar Vertical,0.7,1.4
+15,Habitacional,H4-U,Densidad alta Unifamiliar,0.8,1.6
+16,Habitacional,H4-H,Densidad alta Plurifamiliar Horizontal,0.8,1.6
+17,Habitacional,H4-V,Densidad alta Plurifamiliar Vertical,0.8,2.8
+18,Mixto Habitacional,MB-1,Barrio intensidad baja,0.6,1.8
+19,Mixto Habitacional,MB-2,Barrio intensidad media,0.7,2.1
+20,Mixto Habitacional,MB-3,Barrio intensidad alta,0.8,2.4
+21,Mixto Habitacional,MD-1,Corredor intensidad baja,0.6,1.8
+22,Mixto Habitacional,MD-2,Corredor intensidad media,0.7,2.1
+23,Mixto Habitacional,MD-3,Corredor intensidad alta,0.8,2.4
+24,Mixto Habitacional,MD-4,Corredor intensidad maxima,0.8,3.2
+25,Mixto Habitacional,MC-1,Central intensidad baja,0.6,1.8
+26,Mixto Habitacional,MC-2,Central intensidad media,0.7,2.1
+27,Mixto Habitacional,MC-3,Central intensidad alta,0.8,2.4
+28,Mixto Habitacional,MC-4,Central intensidad maxima,0.8,3.2
+29,Comercial y Servicios,CB-,De Barrio,0.7,2.1
+30,Comercial y Servicios,CD-,Corredor,0.7,2.1
+31,Comercial y Servicios,CC-,Central,0.7,2.1
+32,Comercial y Servicios,CR,Regional,0.7,2.1
+33,Comercial y Servicios,S,Serv. A Industria y Com.,0.8,8M3
+34,Industria,I-1,Industria Ligera,0.8,8M3
+35,Industria,I-2,Industria Media,0.7,10.5M3
+36,Industria,I-3,Industria Pesada,0.7,10.5M3
+37,Equipamiento,EI,Equipamiento Institucional,SN,SN
+38,Equipamiento,EK,Equipamiento Regional,0.6,2.1
+39,Equipamiento,EV,Espacios Verdes,0.05,0.05
+40,Equipamiento,EE,Equipamiento Especial,0.6,1.8
+41,Equipamiento,,Infraestructura,0,2.1

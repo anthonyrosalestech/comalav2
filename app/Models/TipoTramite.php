@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TipoProceso extends Model
+class TipoTramite extends Model
 {
-    protected $table = 'tipo_procesos';
+    protected $table = 'tipo_tramites';
     protected $primaryKey = 'id';
 
     protected $fillable = [
