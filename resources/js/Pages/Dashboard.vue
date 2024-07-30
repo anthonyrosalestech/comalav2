@@ -10,8 +10,7 @@
 </app-layout> -->
 
   <app-layout>
-    <h1>Hola11</h1>
-    <secretario />
+    <secretario :tipoTramites="tipoTramites"/>
   </app-layout>
 </template>
 
@@ -26,5 +25,6 @@ export default {
     Welcome,
     Secretario,
   },
+  props: ['tipoTramites']
 }
 </script>

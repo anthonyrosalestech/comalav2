@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TipoTramite;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 class TipoTramitesController extends Controller
 {
@@ -13,7 +16,12 @@ class TipoTramitesController extends Controller
      */
     public function index()
     {
-        //
+      $tipoTramites = TipoTramite::all();
+
+      return Inertia::render('Dashboard', [
+        'user' => auth()->user(),
+        'tipoTramites' => $tipoTramites,
+    ]);
     }
 
     /**

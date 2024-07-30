@@ -13,5 +13,6 @@ class TipoTramite extends Model
       'id',
       'nombre',
       'descripcion',
+      'route'
     ];
 }
