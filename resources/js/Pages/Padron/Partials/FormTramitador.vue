@@ -31,14 +31,14 @@
       </div>
     </div>
 
-    <div class="col-md-12 mt-3">
+    <div class="col-md-12 mt-5">
       <button
         v-if="!toggle.tramitador.value"
         class="btn btn-outline-secondary fl-rg"
         type="button"
         @click="saveTramitante"
       >
-        Button
+        Guardar informacion del solicitante
       </button>
     </div>
   </div>
@@ -46,7 +46,6 @@
 
 <script>
 import { formularios } from "@/Helpers";
-import Axios from "Axios";
 
 export default {
   props: ["padron", "idProceso", "tramitadorData"],
@@ -73,7 +72,6 @@ export default {
     return {
       inputTramitador: formularios.inputTramitador,
       tramitador: formularios.formTramitador,
-      // dataTramitador: formularios.dataTramitador,s
       toggle: formularios.toggle,
     };
   },
@@ -83,7 +81,7 @@ export default {
     },
     async saveTramitante() {
       try {
-        const response = await Axios.post(
+        const response = await axios.post(
           "/api/tramitante/store",
           {
             ...this.tramitador,

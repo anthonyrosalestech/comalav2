@@ -18,6 +18,52 @@ export default {
     codigo_postal: "",
     telefono: "",
   },
+  formUsoSuelo: {
+    id: "",
+    cos: "",
+    cus: "",
+    zona: "",
+    nomenclatura: "",
+    uso_suelo: ""
+  },
+  inputUsoSuelo: [
+    {
+      title: "Id",
+      name: "id",
+      disabled: true,
+      className: "col-sm-12 col-md-2",
+    },
+    {
+      title: "Cos",
+      name: "cos",
+      disabled: true,
+      className: "col-sm-12 col-md-3",
+    },
+    {
+      title: "Cus",
+      name: "cus",
+      disabled: true,
+      className: "col-sm-12 col-md-3",
+    },
+    {
+      title: "Zona",
+      name: "zona",
+      disabled: true,
+      className: "col-sm-12 col-md-8",
+    },
+    {
+      title: "Nomenclatura",
+      name: "nomenclatura",
+      disabled: true,
+      className: "col-sm-12 col-md-2",
+    },
+    {
+      title: "Uso de suelo",
+      name: "uso_suelo",
+      disabled: true,
+      className: "col-sm-12 col-md-12",
+    },
+  ],
   inputFile: [
     {
       title: "Copia de escritura o titulo de propiedad",

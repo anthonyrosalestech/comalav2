@@ -76,7 +76,8 @@ export default {
       this.clave = "";
     },
     async buscarPadron() {
-      let padron = await getPadronCatastral(this.clave, this.dropdown);
+      let clave = this.clave.replace(/-+/g,'');
+      let padron = await getPadronCatastral(clave, this.dropdown);
       this.padronObject = padron;
       this.$emit('buscar', this.padronObject);
     },

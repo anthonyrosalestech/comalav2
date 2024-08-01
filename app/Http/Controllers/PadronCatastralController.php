@@ -11,7 +11,7 @@ use App\Models\UsoSuelo;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use PhpParser\Node\Expr\Cast\Object_;
+use Illuminate\Support\Facades\DB;
 
 class PadronCatastralController extends Controller
 {
@@ -99,10 +99,25 @@ class PadronCatastralController extends Controller
   public function nuevoTramite(Request $request)
   {
     // dd($request->all());
+    $tramitesEnProceso = DB::table('tramites_proceso as tp')
+      ->join('padron_catastral as pc', 'tp.id_padron_catastral', '=', 'pc.id')
+      ->join('tipo_tramites as tt', 'tp.id_tipo_tramite', '=', 'tt.id')
+      ->leftJoin('tipo_procesos as tip', 'tp.id_tipo_proceso', '=', 'tip.id')
+      ->leftJoin('uso_suelo as us', 'tp.id_uso_suelo', '=', 'us.id')
+      ->select(
+        'tp.id',
+        'pc.clave_catastral',
+        'tt.nombre as tipo_tramite',
+        'tip.nombre as estatus',
+        DB::raw('concat(us.nomenclatura, " - ", us.zona) as uso_suelo')
+      )->get();
+
+    // dd($tramitesEnProceso);
     return Inertia::render('Padron/Padron', [
       'mustVerifyEmail' => $request->user()->hasRole('validador') instanceof MustVerifyEmail,
       'status' => session('status'),
-      'id_tipo_tramites' => $request->id
+      'id_tipo_tramites' => $request->id,
+      'tramitesProceso' => $tramitesEnProceso,
     ]);
   }
 
@@ -141,9 +156,6 @@ class PadronCatastralController extends Controller
 
     $response = $this->crearNuevoTramite($data);
 
-
-    // dd($response);
-
     return Inertia::render('Padron/NuevoTramite', [
       'mustVerifyEmail' => $request->user(),
       'status' => auth()->user(),
@@ -152,6 +164,7 @@ class PadronCatastralController extends Controller
       'usoSuelo' => $uso_suelo,
       'documentos' => $documentos,
       'idProceso' => $response->id,
+      'tramiteProceso' => $response,
       'tramitador' => Tramitantes::where('id_tramite_proceso', $response->id)->first(),
     ]);
   }

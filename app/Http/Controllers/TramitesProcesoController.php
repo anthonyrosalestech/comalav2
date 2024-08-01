@@ -64,14 +64,9 @@ class TramitesProcesoController extends Controller
   /**
    * Update the specified resource in storage.
    */
-  public function update(Request $request, string $id)
+  public function update(Request $request)
   {
-    // $request->validate([
-    //   'title' => 'required|max:255',
-    //   'body' => 'required',
-    // ]);
-
-    $tramitesProceso = TramitesProceso::find($id);
+    $tramitesProceso = TramitesProceso::find($request->id);
     $tramitesProceso->id_padron_catastral = $request->id_padron_catastral ? $request->id_padron_catastral : $tramitesProceso->id_padron_catastral;
     $tramitesProceso->id_tipo_tramite = $request->id_tipo_tramite ? $request->id_tipo_tramite : $tramitesProceso->id_tipo_tramite;
     $tramitesProceso->id_tipo_proceso = $request->id_tipo_proceso ? $request->id_tipo_proceso : $tramitesProceso->id_tipo_proceso;
@@ -91,6 +86,7 @@ class TramitesProcesoController extends Controller
 
     // return redirect()->route('posts.index')
     // ->with('success', 'Post updated successfully.');
+    return response()->json($tramitesProceso);
   }
 
   /**

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ArchivosController;
 use App\Http\Controllers\PadronCatastralController;
 use App\Http\Controllers\TramitantesController;
+use App\Http\Controllers\TramitesProcesoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -44,4 +45,8 @@ Route::prefix('archivos')->group(function () {
 
 Route::prefix('tramitante')->group(function () {
   Route::post('/store', [TramitantesController::class, 'store']);
+});
+
+Route::prefix('tramites-proceso')->group(function () {
+  Route::post('/update', [TramitesProcesoController::class, 'update'])->name('tramites-proceso.update');
 });
