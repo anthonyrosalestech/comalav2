@@ -95,6 +95,8 @@ export default {
         );
 
         console.log("[TEST]", response);
+        this.$emit("validateTramitador", this.tramitador);
+        location.reload();
       } catch (error) {
         console.log(error);
       }

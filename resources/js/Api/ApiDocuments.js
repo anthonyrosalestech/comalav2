@@ -1,12 +1,13 @@
 import Axios from "axios";
 import swal from "sweetalert";
 
-const upload = async (clave_catastral, dataDocuments) => {
+const upload = async (clave_catastral, idProceso, dataDocuments) => {
   try {
     const files = new FormData();
-    // console.log("[TEST]", clave_catastral);
 
     files.append("clave_catastral", clave_catastral);
+    // files.append("id_tramite_proceso", idProceso);
+
     const keyNames = Object.keys(dataDocuments);
 
     keyNames.map((res) => {
@@ -17,20 +18,22 @@ const upload = async (clave_catastral, dataDocuments) => {
 
     const res = await Axios.post("/api/upload", files);
 
-    swal("", "Documentacion actualizada correctamente", "success");
+    swal("", "Documentacion actualizada correctamente", "success").then(e => e ? location.reload() : false);
 
-    await addOrUpdateDocuments(res.data);
+
+    await addOrUpdateDocuments(res.data, idProceso);
   } catch (error) {
     console.log(error);
     swal("Error", "Error al actualizar la documentacion", "error");
   }
 };
 
-const addOrUpdateDocuments = async (data) => {
+const addOrUpdateDocuments = async (data, idProceso) => {
   try {
     const response = await Axios.post(
       "/api/documents/store",
       {
+        id_tramite_proceso: idProceso,
         data: data,
       },
       {

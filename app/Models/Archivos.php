@@ -14,6 +14,7 @@ class Archivos extends Model
 
     protected $fillable = [
         'id',
+        'id_tramite_proceso',
         'clave_catastral',
         'nombre',
         'url',

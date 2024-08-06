@@ -40,15 +40,14 @@ class ArchivosController extends Controller
     foreach ($req as &$value) {
       $result = Archivos::where('clave_catastral', $value->clave_catastral)
         ->where('nombre', $value->nombre)->first();
-      // dd($result);
+
       if (!$result) {
         $result = new Archivos;
       }
 
-      // dd($result);
       if (!$result->clave_catastral) {
         $result->clave_catastral = $value->clave_catastral;
-        // dd("se agrega");
+        $result->id_tramite_proceso = $request->id_tramite_proceso;
       }
       $result->nombre = $value->nombre;
       $result->url = $value->url;

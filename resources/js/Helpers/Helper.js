@@ -1,3 +1,5 @@
+import swal from "sweetalert";
+
 const separateString = (str) => {
   let result = "";
   let size = 2;
@@ -11,4 +13,8 @@ const separateString = (str) => {
   return result.substring(0, result.length - 1);
 };
 
-export { separateString };
+const swalMessage = (type, message) => {
+  swal("", message, type);
+}
+
+export { separateString, swalMessage };
